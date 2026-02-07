@@ -1,0 +1,209 @@
+{
+  "info": {
+    "name": "Profile Playground",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/register",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "register"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ada Lovelace\",\n  \"email\": \"ada@example.com\",\n  \"password\": \"secret123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "login"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"ada@example.com\",\n  \"password\": \"secret123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Me",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/auth/me",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "me"]
+        }
+      }
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/auth/logout",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "logout"]
+        }
+      }
+    },
+    {
+      "name": "Get Profile",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["profile"]
+        }
+      }
+    },
+    {
+      "name": "Create Profile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["profile"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ada Lovelace\",\n  \"email\": \"ada@example.com\",\n  \"education\": [\"B.Sc. Computer Science\"],\n  \"skills\": [\"python\", \"react\"],\n  \"projects\": [\n    {\n      \"title\": \"Profile Playground\",\n      \"description\": \"A tiny CRUD playground.\",\n      \"links\": [\"https://github.com/you\"]\n    }\n  ],\n  \"work\": [\n    {\n      \"company\": \"Acme\",\n      \"role\": \"Developer\",\n      \"start\": \"2023\",\n      \"end\": \"2024\",\n      \"description\": \"Built APIs.\"\n    }\n  ],\n  \"links\": {\n    \"github\": \"https://github.com/you\",\n    \"linkedin\": \"https://linkedin.com/in/you\",\n    \"portfolio\": \"https://you.dev\"\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["profile"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"skills\": [\"python\", \"react\", \"node\"]\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Profile",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["profile"]
+        }
+      }
+    },
+    {
+      "name": "Export Profile",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/profile/export",
+          "host": ["{{baseUrl}}"],
+          "path": ["profile", "export"]
+        }
+      }
+    },
+    {
+      "name": "Query Projects",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/query/projects?skill=python",
+          "host": ["{{baseUrl}}"],
+          "path": ["query", "projects"],
+          "query": [
+            {
+              "key": "skill",
+              "value": "python"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Query Top Skills",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/query/skills/top",
+          "host": ["{{baseUrl}}"],
+          "path": ["query", "skills", "top"]
+        }
+      }
+    },
+    {
+      "name": "Query Search",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/query/search?q=react",
+          "host": ["{{baseUrl}}"],
+          "path": ["query", "search"],
+          "query": [
+            {
+              "key": "q",
+              "value": "react"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000"
+    }
+  ]
+}
