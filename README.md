@@ -3,6 +3,8 @@
 A minimal candidate-profile playground with a MongoDB-backed API, JWT cookie auth, and a React UI to create, query, and export your profile.
 
 Resume: https://drive.google.com/file/d/1oNVL3zU6vb5FBUGrB8x9k9W_JyxR7Zr3/view?usp=sharing
+Frontend: https://me-api-playground-c8d4.onrender.com
+Backend: https://me-api-playground-1-lik8.onrender.com
 
 ## Architecture
 
